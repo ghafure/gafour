@@ -1,0 +1,33 @@
+-- Sales Performance Dashboard measures
+-- Create these measures on the Sales table after importing data/sales_sample.csv.
+
+Total Sales = SUM ( Sales[Sales] )
+
+Total Cost = SUM ( Sales[Cost] )
+
+Gross Profit = [Total Sales] - [Total Cost]
+
+Gross Margin % = DIVIDE ( [Gross Profit], [Total Sales] )
+
+Total Units = SUM ( Sales[Units] )
+
+Average Order Value = DIVIDE ( [Total Sales], COUNTROWS ( Sales ) )
+
+Discount Amount = SUMX ( Sales, Sales[Sales] * Sales[Discount] )
+
+Discount % = DIVIDE ( [Discount Amount], [Total Sales] )
+
+Sales YTD = TOTALYTD ( [Total Sales], 'Date'[Date] )
+
+Sales Previous Month =
+    CALCULATE ( [Total Sales], DATEADD ( 'Date'[Date], -1, MONTH ) )
+
+Sales MoM % =
+    VAR PreviousMonthSales = [Sales Previous Month]
+    RETURN
+        DIVIDE ( [Total Sales] - PreviousMonthSales, PreviousMonthSales )
+
+Profit per Unit = DIVIDE ( [Gross Profit], [Total Units] )
+
+Top Product Sales Rank =
+    RANKX ( ALL ( Sales[Product] ), [Total Sales], , DESC, Dense )

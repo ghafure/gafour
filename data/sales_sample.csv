@@ -1,0 +1,33 @@
+Date,Region,Country,Segment,Category,Product,Customer,Sales,Cost,Units,Discount,Channel
+2025-01-05,North America,United States,Consumer,Technology,Laptop Pro,Aster Co,14250,9800,15,0.05,Online
+2025-01-12,North America,United States,Corporate,Furniture,Ergo Chair,Bright Inc,8300,5400,40,0.10,Partner
+2025-01-18,Europe,Germany,Consumer,Office Supplies,Notebook Set,Core GmbH,2160,1180,120,0.00,Retail
+2025-02-03,Asia Pacific,Japan,Corporate,Technology,Tablet Air,Delta KK,12600,8700,30,0.08,Online
+2025-02-14,Europe,France,Home Office,Furniture,Standing Desk,Etoile SARL,9800,6500,20,0.12,Partner
+2025-02-22,Latin America,Brazil,Consumer,Office Supplies,Pen Bundle,Flor Ltda,1750,920,250,0.03,Retail
+2025-03-04,North America,Canada,Corporate,Technology,Monitor Ultra,Granite Ltd,15400,10120,55,0.07,Online
+2025-03-15,Europe,United Kingdom,Consumer,Furniture,Bookshelf,Hazel PLC,6750,4100,18,0.15,Retail
+2025-03-21,Asia Pacific,Australia,Home Office,Technology,Dock Station,Indigo Pty,5400,3200,45,0.00,Online
+2025-04-02,North America,United States,Consumer,Office Supplies,Printer Paper,Jade Co,3200,1700,200,0.05,Partner
+2025-04-11,Europe,Spain,Corporate,Technology,Laptop Pro,Kilo SL,18900,13100,20,0.04,Online
+2025-04-25,Asia Pacific,Singapore,Consumer,Furniture,Ergo Chair,Lumen Pte,11800,7700,52,0.09,Retail
+2025-05-06,Latin America,Mexico,Corporate,Technology,Tablet Air,Maya SA,9700,6700,24,0.06,Partner
+2025-05-17,North America,United States,Home Office,Furniture,Standing Desk,Nova LLC,12300,8100,25,0.10,Online
+2025-05-28,Europe,Italy,Consumer,Office Supplies,Notebook Set,Orion SRL,2880,1570,160,0.02,Retail
+2025-06-09,Asia Pacific,India,Corporate,Technology,Monitor Ultra,Pearl Pvt,13200,8750,48,0.05,Online
+2025-06-19,North America,Canada,Consumer,Office Supplies,Pen Bundle,Quartz Ltd,2100,1120,300,0.00,Retail
+2025-06-30,Europe,Netherlands,Home Office,Technology,Dock Station,River BV,6720,3950,56,0.07,Partner
+2025-07-08,Latin America,Chile,Consumer,Furniture,Bookshelf,Sierra SpA,4300,2650,12,0.11,Retail
+2025-07-20,North America,United States,Corporate,Technology,Laptop Pro,Titan Corp,22950,15800,25,0.03,Online
+2025-08-01,Europe,Germany,Corporate,Furniture,Standing Desk,Union GmbH,14760,9800,30,0.08,Partner
+2025-08-16,Asia Pacific,Japan,Consumer,Office Supplies,Printer Paper,Vector KK,3840,2020,240,0.04,Retail
+2025-08-28,North America,United States,Home Office,Technology,Tablet Air,Willow LLC,11100,7600,28,0.05,Online
+2025-09-05,Europe,France,Consumer,Technology,Monitor Ultra,Xeno SARL,10400,6900,40,0.09,Online
+2025-09-18,Asia Pacific,Australia,Corporate,Furniture,Ergo Chair,Yarra Pty,9300,6080,42,0.12,Partner
+2025-10-03,Latin America,Brazil,Home Office,Technology,Dock Station,Zeta Ltda,4920,2900,41,0.00,Retail
+2025-10-19,North America,Canada,Corporate,Office Supplies,Notebook Set,Atlas Ltd,2520,1380,140,0.01,Partner
+2025-11-07,Europe,United Kingdom,Consumer,Technology,Laptop Pro,Brook PLC,17100,11800,18,0.06,Online
+2025-11-22,Asia Pacific,Singapore,Home Office,Furniture,Bookshelf,Cedar Pte,5100,3150,15,0.13,Retail
+2025-12-10,North America,United States,Corporate,Technology,Monitor Ultra,Dawn Inc,17600,11600,64,0.05,Online
+2025-12-18,Europe,Spain,Consumer,Office Supplies,Pen Bundle,Ember SL,2450,1310,350,0.02,Retail
+2025-12-27,Latin America,Mexico,Corporate,Furniture,Ergo Chair,Faro SA,7800,5100,35,0.10,Partner
