@@ -1,0 +1,25 @@
+OrderDate,Region,Market,Salesperson,CustomerSegment,ProductCategory,Product,Units,UnitPrice,Discount,TargetRevenue,Status
+2026-01-03,West,Seattle,Avery Chen,Enterprise,Hardware,Laptop Dock,18,189,0.05,3600,Shipped
+2026-01-05,East,Boston,Maya Patel,SMB,Software,Analytics Pro,11,420,0.10,4700,Shipped
+2026-01-09,Central,Chicago,Noah Smith,Mid-Market,Services,Implementation,4,1250,0.00,5200,Shipped
+2026-01-12,South,Austin,Sofia Garcia,Enterprise,Hardware,Conference Camera,9,640,0.08,6000,Shipped
+2026-01-18,West,Portland,Avery Chen,SMB,Software,Security Suite,15,260,0.12,3900,Shipped
+2026-02-02,East,New York,Maya Patel,Enterprise,Services,Training Package,7,900,0.00,6100,Shipped
+2026-02-08,Central,Minneapolis,Noah Smith,SMB,Hardware,Wireless Headset,32,145,0.04,4400,Shipped
+2026-02-13,South,Dallas,Sofia Garcia,Mid-Market,Software,Analytics Pro,14,420,0.07,5600,Shipped
+2026-02-21,West,San Francisco,Avery Chen,Enterprise,Services,Implementation,6,1250,0.03,7400,Shipped
+2026-03-01,East,Philadelphia,Maya Patel,Mid-Market,Hardware,Laptop Dock,22,189,0.05,4200,Shipped
+2026-03-06,Central,Denver,Noah Smith,Enterprise,Software,Security Suite,18,260,0.09,4700,Shipped
+2026-03-10,South,Atlanta,Sofia Garcia,SMB,Hardware,Conference Camera,5,640,0.10,3100,Returned
+2026-03-17,West,Seattle,Avery Chen,Mid-Market,Software,Analytics Pro,19,420,0.06,7600,Shipped
+2026-03-23,East,Boston,Maya Patel,SMB,Services,Training Package,3,900,0.00,2600,Shipped
+2026-04-04,Central,Chicago,Noah Smith,Enterprise,Hardware,Wireless Headset,41,145,0.05,5900,Shipped
+2026-04-09,South,Austin,Sofia Garcia,Enterprise,Software,Security Suite,27,260,0.08,6900,Shipped
+2026-04-15,West,Portland,Avery Chen,SMB,Services,Implementation,2,1250,0.00,2400,Shipped
+2026-04-20,East,New York,Maya Patel,Enterprise,Hardware,Conference Camera,12,640,0.06,7600,Shipped
+2026-05-03,Central,Minneapolis,Noah Smith,Mid-Market,Software,Analytics Pro,16,420,0.05,6500,Shipped
+2026-05-08,South,Dallas,Sofia Garcia,SMB,Hardware,Laptop Dock,25,189,0.07,4500,Shipped
+2026-05-14,West,San Francisco,Avery Chen,Enterprise,Software,Security Suite,31,260,0.10,7800,Shipped
+2026-05-19,East,Philadelphia,Maya Patel,Mid-Market,Services,Training Package,8,900,0.02,7100,Shipped
+2026-06-02,Central,Denver,Noah Smith,SMB,Hardware,Wireless Headset,28,145,0.05,3800,Shipped
+2026-06-07,South,Atlanta,Sofia Garcia,Enterprise,Services,Implementation,5,1250,0.04,6200,Shipped
