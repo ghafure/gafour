@@ -1,0 +1,5 @@
+# Generated Power BI report artifacts. Recreate with scripts/create_pbix_package.py.
+/reports/index.html
+/reports/*.pbix
+/reports/*.pbix.zip
+/reports/*.sha256
