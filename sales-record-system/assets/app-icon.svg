@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Sales Record System icon">
+  <rect width="128" height="128" rx="24" fill="#087b7a"/>
+  <path d="M36 48h56l-6 46H42L36 48Z" fill="#ffffff" opacity=".96"/>
+  <path d="M49 48v-6c0-9 7-16 16-16s16 7 16 16v6" fill="none" stroke="#ffffff" stroke-width="10" stroke-linecap="round"/>
+  <path d="M64 59v24M54 70h20" fill="none" stroke="#087b7a" stroke-width="8" stroke-linecap="round"/>
+</svg>
