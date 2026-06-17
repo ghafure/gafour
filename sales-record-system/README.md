@@ -1,4 +1,4 @@
-# Sales Record System
+<img width="1586" height="992" alt="ig_0f06201ab1a7e772016a3297946cf48196b2163aa173737dbb" src="https://github.com/user-attachments/assets/e3e60f80-4839-4819-b04e-67062b66d2aa" /><img width="1586" height="992" alt="ig_0f06201ab1a7e772016a3297946cf48196b2163aa173737dbb" src="https://github.com/user-attachments/assets/51baec2e-270a-4d54-aa2c-35e65991849b" /># Sales Record System
 
 A dependency-free local sales record system for Windows. It runs in the browser, stores records in localStorage, and includes a user-level installer that creates Desktop and Start Menu shortcuts.
 
