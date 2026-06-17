@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#087b7a">
+    <title>Sales Record System</title>
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Primary">
+        <div class="brand">
+          <div class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" role="img">
+              <path d="M7 9V7.8A3.8 3.8 0 0 1 10.8 4h2.4A3.8 3.8 0 0 1 17 7.8V9"></path>
+              <path d="M5 9h14l-1.2 10H6.2L5 9Z"></path>
+              <path d="M9 13h6"></path>
+              <path d="M12 10.5v5"></path>
+            </svg>
+          </div>
+          <div>
+            <strong>Sales Record</strong>
+            <span>Local system</span>
+          </div>
+        </div>
+
+        <nav class="nav-list" aria-label="Sales Record sections">
+          <button class="nav-item active" type="button" data-scroll-target="dashboard">
+            <span class="icon" aria-hidden="true" data-icon="layout"></span>
+            Dashboard
+          </button>
+          <button class="nav-item" type="button" data-scroll-target="records">
+            <span class="icon" aria-hidden="true" data-icon="table"></span>
+            Sales Records
+          </button>
+          <button class="nav-item" type="button" data-scroll-target="entry">
+            <span class="icon" aria-hidden="true" data-icon="plus"></span>
+            New Sale
+          </button>
+          <button class="nav-item" type="button" data-scroll-target="insights">
+            <span class="icon" aria-hidden="true" data-icon="chart"></span>
+            Reports
+          </button>
+          <button class="nav-item" type="button" data-action="backup">
+            <span class="icon" aria-hidden="true" data-icon="download"></span>
+            Backup
+          </button>
+        </nav>
+
+        <div class="storage-card">
+          <span class="status-dot" aria-hidden="true"></span>
+          <div>
+            <strong>Local database</strong>
+            <span id="storageStatus">Ready</span>
+          </div>
+        </div>
+      </aside>
+
+      <main class="workspace">
+        <header class="topbar">
+          <button class="icon-button menu-button" type="button" id="menuButton" aria-label="Toggle navigation">
+            <span class="icon" aria-hidden="true" data-icon="menu"></span>
+          </button>
+
+          <label class="global-search">
+            <span class="icon" aria-hidden="true" data-icon="search"></span>
+            <input id="globalSearch" type="search" placeholder="Search invoices, customers, products...">
+          </label>
+
+          <div class="topbar-actions">
+            <button class="primary-button" type="button" data-scroll-target="entry">
+              <span class="icon" aria-hidden="true" data-icon="plus"></span>
+              New Sale
+            </button>
+            <button class="ghost-button" type="button" id="importButton">
+              <span class="icon" aria-hidden="true" data-icon="upload"></span>
+              Import
+            </button>
+            <button class="ghost-button" type="button" id="exportCsvButton">
+              <span class="icon" aria-hidden="true" data-icon="download"></span>
+              Export CSV
+            </button>
+            <button class="ghost-button" type="button" id="backupButton">
+              <span class="icon" aria-hidden="true" data-icon="download"></span>
+              Backup JSON
+            </button>
+            <button class="ghost-button" type="button" id="printButton">
+              <span class="icon" aria-hidden="true" data-icon="print"></span>
+              Print
+            </button>
+          </div>
+        </header>
+
+        <h1 class="sr-only" id="dashboard">Sales Record System</h1>
+
+        <section class="kpi-grid" aria-label="Sales key figures">
+          <article class="kpi-card">
+            <div class="kpi-icon teal" aria-hidden="true">
+              <span class="icon" data-icon="money"></span>
+            </div>
+            <div>
+              <span>Total Sales</span>
+              <strong id="kpiTotalSales">RM 0.00</strong>
+              <small id="kpiTotalCount">0 records</small>
+            </div>
+          </article>
+          <article class="kpi-card">
+            <div class="kpi-icon green" aria-hidden="true">
+              <span class="icon" data-icon="check"></span>
+            </div>
+            <div>
+              <span>Paid Amount</span>
+              <strong id="kpiPaid">RM 0.00</strong>
+              <small id="kpiPaidCount">0 paid</small>
+            </div>
+          </article>
+          <article class="kpi-card">
+            <div class="kpi-icon amber" aria-hidden="true">
+              <span class="icon" data-icon="clock"></span>
+            </div>
+            <div>
+              <span>Pending Amount</span>
+              <strong id="kpiPending">RM 0.00</strong>
+              <small id="kpiPendingCount">0 pending</small>
+            </div>
+          </article>
+          <article class="kpi-card">
+            <div class="kpi-icon blue" aria-hidden="true">
+              <span class="icon" data-icon="receipt"></span>
+            </div>
+            <div>
+              <span>Average Sale</span>
+              <strong id="kpiAverage">RM 0.00</strong>
+              <small id="kpiLatest">No records yet</small>
+            </div>
+          </article>
+        </section>
+
+        <section class="content-grid">
+          <article class="panel entry-panel" id="entry">
+            <div class="panel-header">
+              <div>
+                <h2 id="entryTitle">New Sales Entry</h2>
+                <p id="entrySubtitle">Create a complete sales record with payment status.</p>
+              </div>
+              <button class="ghost-button compact" type="button" id="resetFormButton">Clear</button>
+            </div>
+
+            <form id="salesForm" class="sales-form" autocomplete="off">
+              <input type="hidden" id="recordId">
+              <input type="hidden" id="notes" name="notes">
+
+              <label>
+                <span>Invoice No.</span>
+                <input id="invoiceNo" name="invoiceNo" type="text" required>
+              </label>
+
+              <label>
+                <span>Date</span>
+                <input id="saleDate" name="saleDate" type="date" required>
+              </label>
+
+              <label>
+                <span>Customer</span>
+                <input id="customer" name="customer" type="text" placeholder="Customer name" required>
+              </label>
+
+              <label>
+                <span>Product / Service</span>
+                <input id="item" name="item" type="text" placeholder="Item sold" required>
+              </label>
+
+              <label>
+                <span>Quantity</span>
+                <input id="quantity" name="quantity" type="number" min="0.01" step="0.01" required>
+              </label>
+
+              <label>
+                <span>Unit Price</span>
+                <input id="unitPrice" name="unitPrice" type="number" min="0" step="0.01" required>
+              </label>
+
+              <label>
+                <span>Tax (%)</span>
+                <input id="taxRate" name="taxRate" type="number" min="0" max="100" step="0.01">
+              </label>
+
+              <label>
+                <span>Discount</span>
+                <input id="discount" name="discount" type="number" min="0" step="0.01">
+              </label>
+
+              <label>
+                <span>Payment Status</span>
+                <select id="status" name="status" required>
+                  <option>Paid</option>
+                  <option>Pending</option>
+                  <option>Partial</option>
+                </select>
+              </label>
+
+              <label>
+                <span>Payment Method</span>
+                <select id="method" name="method" required>
+                  <option>Bank Transfer</option>
+                  <option>Cash</option>
+                  <option>Credit Card</option>
+                  <option>Debit Card</option>
+                  <option>E-Wallet</option>
+                </select>
+              </label>
+
+              <div class="form-total">
+                <span>Total Amount</span>
+                <strong id="formTotal">RM 0.00</strong>
+              </div>
+
+              <div class="form-actions">
+                <button class="ghost-button" type="button" id="cancelEditButton" hidden>Cancel Edit</button>
+                <button class="primary-button" type="submit">
+                  <span class="icon" aria-hidden="true" data-icon="save"></span>
+                  Save Sale
+                </button>
+              </div>
+            </form>
+          </article>
+
+          <article class="panel insight-panel" id="insights">
+            <div class="panel-header">
+              <div>
+                <h2>Monthly Sales Overview</h2>
+                <p id="chartCaption">This year by invoice date.</p>
+              </div>
+              <select id="chartYear" class="mini-select" aria-label="Chart year"></select>
+            </div>
+
+            <div class="chart-summary">
+              <div>
+                <span>Best Month</span>
+                <strong id="bestMonth">-</strong>
+              </div>
+              <div>
+                <span>Outstanding</span>
+                <strong id="outstandingSummary">RM 0.00</strong>
+              </div>
+            </div>
+
+            <div class="bar-chart" id="barChart" aria-label="Monthly sales bar chart"></div>
+          </article>
+        </section>
+
+        <section class="panel records-panel" id="records">
+          <div class="records-toolbar">
+            <div>
+              <h2>Sales Records</h2>
+              <p id="recordsMeta">Showing 0 records</p>
+            </div>
+            <div class="filter-row">
+              <input id="fromDate" type="date" aria-label="From date">
+              <input id="toDate" type="date" aria-label="To date">
+              <select id="statusFilter" aria-label="Payment status filter">
+                <option value="">All Statuses</option>
+                <option>Paid</option>
+                <option>Pending</option>
+                <option>Partial</option>
+              </select>
+              <select id="methodFilter" aria-label="Payment method filter">
+                <option value="">All Methods</option>
+                <option>Bank Transfer</option>
+                <option>Cash</option>
+                <option>Credit Card</option>
+                <option>Debit Card</option>
+                <option>E-Wallet</option>
+              </select>
+              <button class="ghost-button compact" type="button" id="clearFiltersButton">
+                <span class="icon" aria-hidden="true" data-icon="filter"></span>
+                Clear
+              </button>
+            </div>
+          </div>
+
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Invoice #</th>
+                  <th>Date</th>
+                  <th>Customer</th>
+                  <th>Product / Service</th>
+                  <th class="num">Qty</th>
+                  <th class="num">Unit Price</th>
+                  <th class="num">Tax</th>
+                  <th class="num">Discount</th>
+                  <th class="num">Total Amount</th>
+                  <th>Status</th>
+                  <th>Method</th>
+                  <th class="actions-col">Actions</th>
+                </tr>
+              </thead>
+              <tbody id="recordsBody"></tbody>
+            </table>
+          </div>
+
+          <div class="empty-state" id="emptyState" hidden>
+            <span class="icon" aria-hidden="true" data-icon="receipt"></span>
+            <strong>No sales records found</strong>
+            <p>Create a sale or clear the filters to show more records.</p>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <dialog id="recordDialog" class="record-dialog">
+      <div class="dialog-header">
+        <h2>Sales Record</h2>
+        <button class="icon-button" type="button" id="closeDialogButton" aria-label="Close details">
+          <span class="icon" aria-hidden="true" data-icon="x"></span>
+        </button>
+      </div>
+      <div id="recordDetail" class="record-detail"></div>
+      <div class="dialog-actions">
+        <button class="ghost-button" type="button" id="dialogEditButton">Edit</button>
+        <button class="primary-button" type="button" id="dialogPrintButton">Print</button>
+      </div>
+    </dialog>
+
+    <input id="importFile" type="file" accept=".json,.csv,text/csv,application/json" hidden>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
